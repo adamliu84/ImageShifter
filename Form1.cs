@@ -55,5 +55,12 @@ namespace ImageShifter
         {
 
         }
+
+        private void buttonCopy_Click(object sender, EventArgs e)
+        {
+            String szSourceFile = aszImageFiles[listBoxImageListing.SelectedIndex];
+            String szDestFile = textBoxCopyDirectory.Text + "\\" + Path.GetFileName(szSourceFile);
+            File.Copy(szSourceFile, szDestFile, true);
+        }
     }
 }

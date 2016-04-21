@@ -32,6 +32,8 @@
             this.buttonLoadDirImage = new System.Windows.Forms.Button();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.listBoxImageListing = new System.Windows.Forms.ListBox();
+            this.textBoxCopyDirectory = new System.Windows.Forms.TextBox();
+            this.buttonCopy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,11 +73,31 @@
             this.listBoxImageListing.TabIndex = 3;
             this.listBoxImageListing.SelectedIndexChanged += new System.EventHandler(this.listBoxImageListing_SelectedIndexChanged);
             // 
+            // textBoxCopyDirectory
+            // 
+            this.textBoxCopyDirectory.Location = new System.Drawing.Point(7, 434);
+            this.textBoxCopyDirectory.Name = "textBoxCopyDirectory";
+            this.textBoxCopyDirectory.Size = new System.Drawing.Size(516, 20);
+            this.textBoxCopyDirectory.TabIndex = 4;
+            this.textBoxCopyDirectory.Text = "P:\\\\ImageShifterDump";
+            // 
+            // buttonCopy
+            // 
+            this.buttonCopy.Location = new System.Drawing.Point(539, 431);
+            this.buttonCopy.Name = "buttonCopy";
+            this.buttonCopy.Size = new System.Drawing.Size(145, 23);
+            this.buttonCopy.TabIndex = 5;
+            this.buttonCopy.Text = "Copy to";
+            this.buttonCopy.UseVisualStyleBackColor = true;
+            this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 466);
+            this.Controls.Add(this.buttonCopy);
+            this.Controls.Add(this.textBoxCopyDirectory);
             this.Controls.Add(this.listBoxImageListing);
             this.Controls.Add(this.pictureBoxPreview);
             this.Controls.Add(this.buttonLoadDirImage);
@@ -94,6 +116,8 @@
         private System.Windows.Forms.Button buttonLoadDirImage;
         private System.Windows.Forms.PictureBox pictureBoxPreview;
         private System.Windows.Forms.ListBox listBoxImageListing;
+        private System.Windows.Forms.TextBox textBoxCopyDirectory;
+        private System.Windows.Forms.Button buttonCopy;
     }
 }
 
