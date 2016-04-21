@@ -31,6 +31,7 @@
             this.textBoxLoadedDirectory = new System.Windows.Forms.TextBox();
             this.buttonLoadDirImage = new System.Windows.Forms.Button();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
+            this.listBoxImageListing = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,15 +58,25 @@
             this.pictureBoxPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxPreview.Location = new System.Drawing.Point(7, 34);
             this.pictureBoxPreview.Name = "pictureBoxPreview";
-            this.pictureBoxPreview.Size = new System.Drawing.Size(516, 385);
+            this.pictureBoxPreview.Size = new System.Drawing.Size(516, 394);
             this.pictureBoxPreview.TabIndex = 2;
             this.pictureBoxPreview.TabStop = false;
+            // 
+            // listBoxImageListing
+            // 
+            this.listBoxImageListing.FormattingEnabled = true;
+            this.listBoxImageListing.Location = new System.Drawing.Point(539, 34);
+            this.listBoxImageListing.Name = "listBoxImageListing";
+            this.listBoxImageListing.Size = new System.Drawing.Size(145, 394);
+            this.listBoxImageListing.TabIndex = 3;
+            this.listBoxImageListing.SelectedIndexChanged += new System.EventHandler(this.listBoxImageListing_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 466);
+            this.ClientSize = new System.Drawing.Size(695, 466);
+            this.Controls.Add(this.listBoxImageListing);
             this.Controls.Add(this.pictureBoxPreview);
             this.Controls.Add(this.buttonLoadDirImage);
             this.Controls.Add(this.textBoxLoadedDirectory);
@@ -82,6 +93,7 @@
         private System.Windows.Forms.TextBox textBoxLoadedDirectory;
         private System.Windows.Forms.Button buttonLoadDirImage;
         private System.Windows.Forms.PictureBox pictureBoxPreview;
+        private System.Windows.Forms.ListBox listBoxImageListing;
     }
 }
 
