@@ -14,7 +14,7 @@ namespace ImageShifter
     public partial class Form1 : Form
     {
         //private IEnumerable<String> aszImageFiles;
-        private IList<String> aszImageFiles;
+        private IList<String> aszImageFiles = new List<string>();
 
         public Form1()
         {
@@ -27,20 +27,33 @@ namespace ImageShifter
             String szPath = textBoxLoadedDirectory.Text;
             String[] aszFiles = Directory.GetFiles(@szPath);
             String[] aszImageFileExt = { "jpg", "exe", "gif" };
-            aszImageFiles = aszFiles.Where(f => aszImageFileExt.Contains(f.Split('.')[1])).ToList<String>();
+            //aszImageFiles.Clear();            
+            aszImageFiles = aszFiles.Where(f => aszImageFileExt.Contains((f.Split('.')[1]).ToLower())).ToList<String>();
             loadImageListing();
 
         }
-        
+
         private void loadImageListing()
         {
+            listBoxImageListing.ClearSelected();
             listBoxImageListing.DataSource = PathFormatter.listFilename(aszImageFiles);
         }
 
         private void listBoxImageListing_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (0 > listBoxImageListing.Items.Count || -1 == listBoxImageListing.SelectedIndex)
+            {
+                return;
+            }
             pictureBoxPreview.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPreview.Image = null;
+            pictureBoxPreview.Invalidate();
             pictureBoxPreview.Image = Image.FromFile(aszImageFiles[listBoxImageListing.SelectedIndex]);
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }
