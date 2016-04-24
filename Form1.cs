@@ -58,9 +58,35 @@ namespace ImageShifter
 
         private void buttonCopy_Click(object sender, EventArgs e)
         {
+            copyInc(1);
+        }
+
+        private void buttonCopy2_Click(object sender, EventArgs e)
+        {
+            copyInc(2);
+        }
+
+        private void buttonCopy3_Click(object sender, EventArgs e)
+        {
+            copyInc(3);
+        }
+
+        private void copyInc(int nIndex)
+        {
+            if (0 > listBoxImageListing.Items.Count || -1 == listBoxImageListing.SelectedIndex)
+            {
+                return;
+            }
+            //Copy source to dest
             String szSourceFile = aszImageFiles[listBoxImageListing.SelectedIndex];
-            String szDestFile = textBoxCopyDirectory.Text + "\\" + Path.GetFileName(szSourceFile);
+            TextBox cTargetTextBox = this.Controls["textBoxCopyDirectory" + nIndex] as TextBox;
+            String szDestFile = cTargetTextBox.Text + "\\" + Path.GetFileName(szSourceFile);
             File.Copy(szSourceFile, szDestFile, true);
+            //Increment in the listbox to the next picture (Stop at last index)
+            if (0 < listBoxImageListing.Items.Count && (listBoxImageListing.SelectedIndex + 1) < listBoxImageListing.Items.Count)
+            {
+                listBoxImageListing.SelectedIndex++;
+            }
         }
     }
 }
