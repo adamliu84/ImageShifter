@@ -38,6 +38,7 @@
             this.buttonCopy2 = new System.Windows.Forms.Button();
             this.textBoxCopyDirectory3 = new System.Windows.Forms.TextBox();
             this.buttonCopy3 = new System.Windows.Forms.Button();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             this.textBoxLoadedDirectory.Size = new System.Drawing.Size(516, 20);
             this.textBoxLoadedDirectory.TabIndex = 0;
             this.textBoxLoadedDirectory.Text = "P:\\\\ImageShifterSample";
+            this.textBoxLoadedDirectory.Enter += new System.EventHandler(this.textBoxLoadedDirectory_Enter);
             // 
             // buttonLoadDirImage
             // 
@@ -84,6 +86,7 @@
             this.textBoxCopyDirectory1.Size = new System.Drawing.Size(516, 20);
             this.textBoxCopyDirectory1.TabIndex = 4;
             this.textBoxCopyDirectory1.Text = "P:\\\\ImageShifterDump1";
+            this.textBoxCopyDirectory1.Enter += new System.EventHandler(this.textBoxCopyDirectory1_Enter);
             // 
             // buttonCopy1
             // 
@@ -102,6 +105,7 @@
             this.textBoxCopyDirectory2.Size = new System.Drawing.Size(516, 20);
             this.textBoxCopyDirectory2.TabIndex = 6;
             this.textBoxCopyDirectory2.Text = "P:\\\\ImageShifterDump2";
+            this.textBoxCopyDirectory2.Enter += new System.EventHandler(this.textBoxCopyDirectory2_Enter);
             // 
             // buttonCopy2
             // 
@@ -120,6 +124,7 @@
             this.textBoxCopyDirectory3.Size = new System.Drawing.Size(516, 20);
             this.textBoxCopyDirectory3.TabIndex = 8;
             this.textBoxCopyDirectory3.Text = "P:\\\\ImageShifterDump3";
+            this.textBoxCopyDirectory3.Enter += new System.EventHandler(this.textBoxCopyDirectory3_Enter);
             // 
             // buttonCopy3
             // 
@@ -167,6 +172,7 @@
         private System.Windows.Forms.Button buttonCopy2;
         private System.Windows.Forms.TextBox textBoxCopyDirectory3;
         private System.Windows.Forms.Button buttonCopy3;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
     }
 }
 

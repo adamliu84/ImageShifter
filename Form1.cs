@@ -88,5 +88,36 @@ namespace ImageShifter
                 listBoxImageListing.SelectedIndex++;
             }
         }
+
+        private void textBoxLoadedDirectory_Enter(object sender, EventArgs e)
+        {
+            this.updatePathViaFolderDialog("textBoxLoadedDirectory");
+        }
+
+        private void textBoxCopyDirectory1_Enter(object sender, EventArgs e)
+        {
+            this.updatePathViaFolderDialog("textBoxCopyDirectory1");
+        }
+
+        private void textBoxCopyDirectory2_Enter(object sender, EventArgs e)
+        {
+            this.updatePathViaFolderDialog("textBoxCopyDirectory1");
+        }
+
+        private void textBoxCopyDirectory3_Enter(object sender, EventArgs e)
+        {
+            this.updatePathViaFolderDialog("textBoxCopyDirectory1");
+        }
+
+        private void updatePathViaFolderDialog(String szTargetBox)
+        {
+            //Open folder dialog for folder selection
+            DialogResult result = folderBrowserDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                TextBox cTargetTextBox = this.Controls[szTargetBox] as TextBox;
+                cTargetTextBox.Text = folderBrowserDialog.SelectedPath;
+            }
+        }
     }
 }
