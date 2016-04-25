@@ -146,8 +146,9 @@
             this.Controls.Add(this.pictureBoxPreview);
             this.Controls.Add(this.buttonLoadDirImage);
             this.Controls.Add(this.textBoxLoadedDirectory);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Image Shifter";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
