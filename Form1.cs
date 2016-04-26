@@ -101,12 +101,12 @@ namespace ImageShifter
 
         private void textBoxCopyDirectory2_Enter(object sender, EventArgs e)
         {
-            this.updatePathViaFolderDialog("textBoxCopyDirectory1");
+            this.updatePathViaFolderDialog("textBoxCopyDirectory2");
         }
 
         private void textBoxCopyDirectory3_Enter(object sender, EventArgs e)
         {
-            this.updatePathViaFolderDialog("textBoxCopyDirectory1");
+            this.updatePathViaFolderDialog("textBoxCopyDirectory3");
         }
 
         private void updatePathViaFolderDialog(String szTargetBox)
