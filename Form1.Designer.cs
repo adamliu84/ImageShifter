@@ -46,10 +46,11 @@
             // 
             this.textBoxLoadedDirectory.Location = new System.Drawing.Point(7, 8);
             this.textBoxLoadedDirectory.Name = "textBoxLoadedDirectory";
+            this.textBoxLoadedDirectory.ReadOnly = true;
             this.textBoxLoadedDirectory.Size = new System.Drawing.Size(516, 20);
             this.textBoxLoadedDirectory.TabIndex = 0;
             this.textBoxLoadedDirectory.Text = "P:\\\\ImageShifterSample";
-            this.textBoxLoadedDirectory.Enter += new System.EventHandler(this.textBoxLoadedDirectory_Enter);
+            this.textBoxLoadedDirectory.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBoxLoadedDirectory_MouseDown);
             // 
             // buttonLoadDirImage
             // 
@@ -83,10 +84,11 @@
             // 
             this.textBoxCopyDirectory1.Location = new System.Drawing.Point(7, 434);
             this.textBoxCopyDirectory1.Name = "textBoxCopyDirectory1";
+            this.textBoxCopyDirectory1.ReadOnly = true;
             this.textBoxCopyDirectory1.Size = new System.Drawing.Size(516, 20);
             this.textBoxCopyDirectory1.TabIndex = 4;
             this.textBoxCopyDirectory1.Text = "P:\\\\ImageShifterDump1";
-            this.textBoxCopyDirectory1.Enter += new System.EventHandler(this.textBoxCopyDirectory1_Enter);
+            this.textBoxCopyDirectory1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBoxCopyDirectory1_MouseDown);
             // 
             // buttonCopy1
             // 
@@ -102,10 +104,11 @@
             // 
             this.textBoxCopyDirectory2.Location = new System.Drawing.Point(7, 460);
             this.textBoxCopyDirectory2.Name = "textBoxCopyDirectory2";
+            this.textBoxCopyDirectory2.ReadOnly = true;
             this.textBoxCopyDirectory2.Size = new System.Drawing.Size(516, 20);
             this.textBoxCopyDirectory2.TabIndex = 6;
             this.textBoxCopyDirectory2.Text = "P:\\\\ImageShifterDump2";
-            this.textBoxCopyDirectory2.Enter += new System.EventHandler(this.textBoxCopyDirectory2_Enter);
+            this.textBoxCopyDirectory2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBoxCopyDirectory2_MouseDown);
             // 
             // buttonCopy2
             // 
@@ -121,10 +124,11 @@
             // 
             this.textBoxCopyDirectory3.Location = new System.Drawing.Point(7, 486);
             this.textBoxCopyDirectory3.Name = "textBoxCopyDirectory3";
+            this.textBoxCopyDirectory3.ReadOnly = true;
             this.textBoxCopyDirectory3.Size = new System.Drawing.Size(516, 20);
             this.textBoxCopyDirectory3.TabIndex = 8;
             this.textBoxCopyDirectory3.Text = "P:\\\\ImageShifterDump3";
-            this.textBoxCopyDirectory3.Enter += new System.EventHandler(this.textBoxCopyDirectory3_Enter);
+            this.textBoxCopyDirectory3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBoxCopyDirectory3_MouseDown);
             // 
             // buttonCopy3
             // 

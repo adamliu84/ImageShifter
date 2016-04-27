@@ -89,26 +89,6 @@ namespace ImageShifter
             }
         }
 
-        private void textBoxLoadedDirectory_Enter(object sender, EventArgs e)
-        {
-            this.updatePathViaFolderDialog("textBoxLoadedDirectory");
-        }
-
-        private void textBoxCopyDirectory1_Enter(object sender, EventArgs e)
-        {
-            this.updatePathViaFolderDialog("textBoxCopyDirectory1");
-        }
-
-        private void textBoxCopyDirectory2_Enter(object sender, EventArgs e)
-        {
-            this.updatePathViaFolderDialog("textBoxCopyDirectory2");
-        }
-
-        private void textBoxCopyDirectory3_Enter(object sender, EventArgs e)
-        {
-            this.updatePathViaFolderDialog("textBoxCopyDirectory3");
-        }
-
         private void updatePathViaFolderDialog(String szTargetBox)
         {
             //Open folder dialog for folder selection
@@ -118,6 +98,26 @@ namespace ImageShifter
                 TextBox cTargetTextBox = this.Controls[szTargetBox] as TextBox;
                 cTargetTextBox.Text = folderBrowserDialog.SelectedPath;
             }
+        }
+
+        private void textBoxLoadedDirectory_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.updatePathViaFolderDialog("textBoxLoadedDirectory");
+        }
+
+        private void textBoxCopyDirectory1_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.updatePathViaFolderDialog("textBoxCopyDirectory1");
+        }
+
+        private void textBoxCopyDirectory2_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.updatePathViaFolderDialog("textBoxCopyDirectory2");
+        }
+
+        private void textBoxCopyDirectory3_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.updatePathViaFolderDialog("textBoxCopyDirectory3");
         }
     }
 }
