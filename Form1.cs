@@ -44,8 +44,8 @@ namespace ImageShifter
             if (0 > listBoxImageListing.Items.Count || -1 == listBoxImageListing.SelectedIndex)
             {
                 return;
-            }
-            pictureBoxPreview.SizeMode = PictureBoxSizeMode.StretchImage;
+            }            
+            pictureBoxPreview.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxPreview.Image = null;
             pictureBoxPreview.Invalidate();
             pictureBoxPreview.Image = Image.FromFile(aszImageFiles[listBoxImageListing.SelectedIndex]);
