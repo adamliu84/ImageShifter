@@ -78,6 +78,11 @@ namespace ImageShifter
             TextBox cTargetTextBox = this.Controls["textBoxCopyDirectory" + nIndex] as TextBox;
             String szDestFile = cTargetTextBox.Text + "\\" + Path.GetFileName(szSourceFile);
             File.Copy(szSourceFile, szDestFile, true);
+            this.incrementIndex();
+        }
+
+        private void incrementIndex()
+        {
             //Increment in the listbox to the next picture (Stop at last index)
             if (0 < listBoxImageListing.Items.Count && (listBoxImageListing.SelectedIndex + 1) < listBoxImageListing.Items.Count)
             {
@@ -136,11 +141,7 @@ namespace ImageShifter
             //F4 skip file
             else if (Keys.F4 == e.KeyCode)
             {
-                //Increment in the listbox to the next picture (Stop at last index)
-                if (0 < listBoxImageListing.Items.Count && (listBoxImageListing.SelectedIndex + 1) < listBoxImageListing.Items.Count)
-                {
-                    listBoxImageListing.SelectedIndex++;
-                }
+                this.incrementIndex();
             }
         }
     }
