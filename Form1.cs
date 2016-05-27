@@ -19,6 +19,7 @@ namespace ImageShifter
         public Form1()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
 
         private void buttonLoadDirImage_Click(object sender, EventArgs e)
@@ -26,7 +27,7 @@ namespace ImageShifter
             //Primitive of searching image files of given directory 
             String szPath = textBoxLoadedDirectory.Text;
             String[] aszFiles = Directory.GetFiles(@szPath);
-            String[] aszImageFileExt = { "jpg", "exe", "gif" };
+            String[] aszImageFileExt = { "jpg", "jpeg", "gif", "png" };
             //aszImageFiles.Clear();            
             aszImageFiles = aszFiles.Where(f => aszImageFileExt.Contains((f.Split('.')[1]).ToLower())).ToList<String>();
             loadImageListing();
@@ -44,16 +45,11 @@ namespace ImageShifter
             if (0 > listBoxImageListing.Items.Count || -1 == listBoxImageListing.SelectedIndex)
             {
                 return;
-            }            
+            }
             pictureBoxPreview.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxPreview.Image = null;
             pictureBoxPreview.Invalidate();
             pictureBoxPreview.Image = Image.FromFile(aszImageFiles[listBoxImageListing.SelectedIndex]);
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
         }
 
         private void buttonCopy_Click(object sender, EventArgs e)
@@ -118,6 +114,34 @@ namespace ImageShifter
         private void textBoxCopyDirectory3_MouseDown(object sender, MouseEventArgs e)
         {
             this.updatePathViaFolderDialog("textBoxCopyDirectory3");
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            //F1 copy to location 1
+            if (Keys.F1 == e.KeyCode)
+            {
+                copyInc(1);
+            }
+            //F2 copy to location 2
+            else if (Keys.F2 == e.KeyCode)
+            {
+                copyInc(2);
+            }
+            //F3 copy to location 3
+            else if (Keys.F3 == e.KeyCode)
+            {
+                copyInc(3);
+            }
+            //F4 skip file
+            else if (Keys.F4 == e.KeyCode)
+            {
+                //Increment in the listbox to the next picture (Stop at last index)
+                if (0 < listBoxImageListing.Items.Count && (listBoxImageListing.SelectedIndex + 1) < listBoxImageListing.Items.Count)
+                {
+                    listBoxImageListing.SelectedIndex++;
+                }
+            }
         }
     }
 }
