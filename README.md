@@ -9,4 +9,4 @@ To preview an image and move the image file either designated folder(s) or delet
 # Current Development Screenshot
 **20160529_2100**
 
-![GitHub Logo](https://github.com/adamliu84/ImageShifter/blob/master/Documentation/20160529_2100.png?raw=true)
+![GitHub Logo](https://github.com/adamliu84/ImageShifter/blob/master/Documentation/20160529_2130.png?raw=true)
