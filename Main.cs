@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace ImageShifter
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         //private IEnumerable<String> aszImageFiles;
         private IList<String> aszImageFiles = new List<string>();
 
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             this.KeyPreview = true;
@@ -143,6 +143,19 @@ namespace ImageShifter
             {
                 this.incrementIndex();
             }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = new DialogResult();            
+            Help help = new Help();            
+            help.StartPosition = FormStartPosition.CenterScreen;
+            dr = help.ShowDialog();
         }
     }
 }
