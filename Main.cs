@@ -46,6 +46,10 @@ namespace ImageShifter
             {
                 return;
             }
+            if (null != pictureBoxPreview.Image)
+            {
+                pictureBoxPreview.Image.Dispose();
+            }
             pictureBoxPreview.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxPreview.Image = null;
             pictureBoxPreview.Invalidate();
